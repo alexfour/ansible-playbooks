@@ -12,6 +12,6 @@
   tasks:
     - name: Ensure the httpd service is running
       service:
-        name: httpd
+        name: systemd
         state: started
       become: true
