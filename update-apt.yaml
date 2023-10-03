@@ -2,8 +2,7 @@
 
 ---
 - hosts: all
-  become: true
-  become_method: sudo
+
   tasks:
     #- name: update apt packages
     #  apt:
@@ -11,6 +10,7 @@
     #    force_apt_get: yes
     #    cache_valid_time: 3600
     - name: Update repositories cache and install "foo" package
+      become: yes
       ansible.builtin.apt:
         name: foo
         update_cache: yes 
