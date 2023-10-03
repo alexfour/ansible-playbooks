@@ -1,16 +1,14 @@
 # code: language=ansible
-
----
-- hosts: all
-
-  tasks:
     #- name: update apt packages
     #  apt:
     #    update_cache: yes
     #    force_apt_get: yes
     #    cache_valid_time: 3600
-    - name: Update repositories cache and install "foo" package
-      become: yes
-      ansible.builtin.apt:
-        name: foo
-        update_cache: yes 
+
+
+---
+- name: Ensure the httpd service is running
+  service:
+    name: httpd
+    state: started
+  become: true
