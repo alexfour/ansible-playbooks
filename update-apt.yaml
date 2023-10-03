@@ -7,8 +7,11 @@
 
 
 ---
-- name: Ensure the httpd service is running
-  service:
-    name: httpd
-    state: started
-  become: true
+- hosts: all
+
+  tasks:
+    - name: Ensure the httpd service is running
+      service:
+        name: httpd
+        state: started
+      become: true
